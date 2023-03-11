@@ -1,8 +1,8 @@
 # ----
 # Site
 
-title: Frisco Template
-url: "https://brave-submarine.cloudvent.net"
+title: pandaBlog
+url: "https://pandacase.github.io"
 baseurl:
 google_analytics_key:
 google_maps_javascript_api_key:
@@ -12,11 +12,11 @@ disqus_shortname:
 logo: /siteicon.png
 description: App marketing template for Jekyll.
 author:
-  name:
-  email:
+  name: panda
+  email: 2227119810@qq.com
   twitter: # twitter username without the @ symbol
 social:
-  name: Frisco Template
+  name: panda
   links:
     - https://github.com/CloudCannon/frisco-jekyll-template
 
