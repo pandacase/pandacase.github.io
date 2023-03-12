@@ -2,7 +2,7 @@ left_links:
   - name: Blog
     link: /blog/
   - name: Daily
-    link: /about/
+    link: /daily/
   - name: Contact
     link: /contact/
 right_links:
