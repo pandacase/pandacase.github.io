@@ -8,8 +8,8 @@ left_links:
 right_links:
   - name:
     link: https://facebook.com/cloudcannon
-    new_window: true
     social_icon: Facebook
+    new_window: true
   - name:
     link: https://twitter.com/cloudcannon
     social_icon: Twitter
