@@ -1,5 +1,5 @@
 ---
-title: "pandaBlog"诞生记
+title: "pandaBlog"
 date: 2023-03-11
 description: ....
 categories:
