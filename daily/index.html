@@ -21,20 +21,22 @@ image: https://s1.ax1x.com/2023/03/12/ppMKEKs.jpg
 		<p>底下暂时还没有更新东西(Ｔ▽Ｔ)</p>
 
 		<!-- test -->
-		<section>
-			{% for post in site.posts %}
-				{% if post.categories[0] == "Daily" %}
-				<li class="blog-post">
-					<h2><a href="{% include relative-src.html src=post.url %}">{{ post.title }}</a></h2>
-					{% include post-title.html post=post %}
-					<div class="post-content">
-						{{ post.excerpt }}
-						<div class="button"><a href="{% include relative-src.html src=post.url %}">查看文章</a></div>
-					</div>
-				</li>
-				{% endif %}
-			{% endfor %}
-		</section>
+		<div class="text-container">
+			<section>
+				{% for post in site.posts %}
+					{% if post.categories[0] == "Daily" %}
+					<li class="blog-post">
+						<h2><a href="{% include relative-src.html src=post.url %}">{{ post.title }}</a></h2>
+						{% include post-title.html post=post %}
+						<div class="post-content">
+							{{ post.excerpt }}
+							<div class="button"><a href="{% include relative-src.html src=post.url %}">查看文章</a></div>
+						</div>
+					</li>
+					{% endif %}
+				{% endfor %}
+			</section>
+		</div>
 
 		<!-- origin -->
 		<!-- <p class="editor-link"><a href="cloudcannon:collections/_staff_members" class="btn"><strong>&#9998;</strong> Manage Staff Members</a></p>
