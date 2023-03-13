@@ -22,7 +22,7 @@ image: https://s1.ax1x.com/2023/03/12/ppMKEKs.jpg
 
 		<!-- test -->
 		<div class="text-container">
-			<section>
+			<ul class="blog-posts">
 				{% for post in site.posts %}
 					{% if post.categories[0] == "Daily" %}
 					<li class="blog-post">
@@ -35,7 +35,7 @@ image: https://s1.ax1x.com/2023/03/12/ppMKEKs.jpg
 					</li>
 					{% endif %}
 				{% endfor %}
-			</section>
+			</ul>
 		</div>
 
 		<!-- origin -->
