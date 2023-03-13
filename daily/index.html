@@ -1,0 +1,64 @@
+---
+title: Daily
+description: 
+image: https://s1.ax1x.com/2023/03/12/ppMKEKs.jpg
+---
+
+<section class="hero" style="background-image: url({% include relative-src.html src=page.image %})">
+	<div class="inner-hero text-container">
+		<div class="hero-text-container">
+			<h1 class="editable">(≧∀≦)♪</h1>
+			<p class="subtext editable">这里记录的是日常趣事</p>
+		</div>
+	</div>
+</section>
+
+
+
+<section class="pad">
+	<div class="container">
+		<p>底下暂时还没有更新东西(Ｔ▽Ｔ)</p>
+		<p>底下暂时还没有更新东西(Ｔ▽Ｔ)</p>
+		<p>底下暂时还没有更新东西(Ｔ▽Ｔ)</p>
+
+		<!-- test -->
+		<section>
+			<div class="text-container">
+				<p class="editor-link"><a href="cloudcannon:collections/_posts" class="btn"><strong>&#9998;</strong> Add Post</a></p>
+		
+				
+				<ul class="blog-posts">
+					{% include list-posts.html posts=paginator.posts %}
+				</ul>
+		
+				
+				{% if paginator.total_pages > 1 %}
+					<div class="pagination">
+						{% if paginator.previous_page %}
+							<a href="{{ site.baseurl }}{{ paginator.previous_page_path }}" class="previous btn">&larr; Newer posts</a>
+						{% endif %}
+		
+						<span class="page_number ">{{ paginator.page }} of {{ paginator.total_pages }}</span>
+		
+						{% if paginator.next_page %}
+							<a href="{{ site.baseurl }}{{ paginator.next_page_path }}" class="next btn">Older posts &rarr;</a>
+						{% endif %}
+					</div>
+				{% endif %}
+			</div>
+		</section>
+
+		<!-- origin -->
+		<!-- <p class="editor-link"><a href="cloudcannon:collections/_staff_members" class="btn"><strong>&#9998;</strong> Manage Staff Members</a></p>
+		<ul class="staff">
+			{% for person in site.staff_members %}
+				<li>
+					<div class="square-image" style="background-image: url({% include relative-src.html src=person.image_path %})"></div>
+					<div class="name"><a target="_blank" href="https://twitter.com/{{ person.twitter_username }}">{{ person.name }}</a></div>
+					<div class="position">{{ person.position }}</div>
+				</li>
+			{% endfor %}
+		</ul> -->
+	</div>
+</section>
+
