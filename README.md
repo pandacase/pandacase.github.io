@@ -3,5 +3,4 @@
 
 [![screenshot](images/_screenshot.jpg)](http://pandacase.github.io)
 
-
 * Template by CloudCannon
