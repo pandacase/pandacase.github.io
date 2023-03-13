@@ -17,10 +17,13 @@ image: https://s1.ax1x.com/2023/03/12/ppMeWjI.png
 <section>
 	<div class="text-container">
 		<p class="editor-link"><a href="cloudcannon:collections/_posts" class="btn"><strong>&#9998;</strong> Add Post</a></p>
+
+		<!-- 文章列表 -->
 		<ul class="blog-posts">
 			{% include list-posts.html posts=paginator.posts %}
 		</ul>
 
+		<!-- 分页链接 -->
 		{% if paginator.total_pages > 1 %}
 			<div class="pagination">
 				{% if paginator.previous_page %}
