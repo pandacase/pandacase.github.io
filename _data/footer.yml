@@ -10,6 +10,12 @@ right_links:
       link: https://github.com/pandacase
       social_icon: Github
       new_window: true
+    - name:
+      link: /feed.xml
+      social_icon: RSS
+
+
+
 #   - name:
 #     link: https://facebook.com/cloudcannon
 #     social_icon: Facebook
@@ -26,6 +32,3 @@ right_links:
 #     link: https://instagram.com/
 #     social_icon: Instagram
 #     new_window: true
-    - name:
-      link: /feed.xml
-      social_icon: RSS
