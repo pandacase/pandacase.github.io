@@ -10,12 +10,13 @@ layout: page
 		<div class="post-content">
 			{{ content }}
 
-			<div class="author">
+			<!-- 作者信息 -->
+			<!-- <div class="author">
 				{% assign author_id = page.author_staff_member | prepend: "/staff_members/" | append: "/" %}
 				{% assign author = site.staff_members | where: "url", author_id | first %}
 				<div class="square-image" style="background-image: url('{% include relative-src.html src=author.image_path %}')"></div>
 				<p class="blurb">{{ author.blurb }}</p>
-			</div>
+			</div> -->
 
 			<div class="blog-navigation">
 				{% if page.previous.url %}
