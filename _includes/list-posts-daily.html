@@ -1,0 +1,12 @@
+{% for post in include.posts %}
+	{% if post in site.categories.Daily %}
+	<li class="blog-post">
+		<h2><a href="{% include relative-src.html src=post.url %}">{{ post.title }}</a></h2>
+		{% include post-title.html post=post %}
+		<div class="post-content">
+			{{ post.excerpt }}
+			<div class="button"><a href="{% include relative-src.html src=post.url %}">查看文章</a></div>
+		</div>
+	</li>
+	{% endif %}
+{% endfor %}
