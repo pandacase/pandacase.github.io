@@ -5,7 +5,11 @@ left_links:
     link: /daily/
   - name: Contact
     link: /contact/
-# right_links:
+right_links:
+    - name: Github
+      link: https://github.com/pandacase
+      social_icon: Github
+      new_window: true
 #   - name:
 #     link: https://facebook.com/cloudcannon
 #     social_icon: Facebook
@@ -22,6 +26,6 @@ left_links:
 #     link: https://instagram.com/
 #     social_icon: Instagram
 #     new_window: true
-#   - name:
-#     link: /feed.xml
-#     social_icon: RSS
+    - name:
+      link: /feed.xml
+      social_icon: RSS
