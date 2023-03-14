@@ -19,8 +19,20 @@ image: https://s1.ax1x.com/2023/03/12/ppMMCe1.jpg
 </section>
 
 <section class="pad">
-	<div class="text-container contact-box">
+	<div class="text-container contact-box" style="width: 780px;">
 		<h2 class="editable"># 在线留言</h2>
+		<span class="editable">(这个评论区是匿名的, 信息可以自由填写)</span>
+		<!-- Valine -->
+		<div id="vcomments"></div>
+		<script>
+			new Valine({
+				el: '#vcomments',
+				appId: 'vX0mtaqxsIPsUhp5xHOGRTnt-gzGzoHsz',
+				appKey: 'xjMwzkaejI1XsqFyH0EaYlL5'
+			})
+			</script>
+
+		<h2 class="editable"># 社交评论</h2>
 		<span class="editable">(如果没有加载可以刷新一下页面</span>
 		<!-- 来必力City版安装代码 -->
 		<div id="lv-container" data-id="city" data-uid="MTAyMC81ODE3NC8zNDYzNw==">
@@ -41,15 +53,7 @@ image: https://s1.ax1x.com/2023/03/12/ppMMCe1.jpg
 		</div>
 		<!-- City版安装代码已完成 -->
 
-		<!-- Valine -->
-		<div id="vcomments"></div>
-		<script>
-			new Valine({
-				el: '#vcomments',
-				appId: 'vX0mtaqxsIPsUhp5xHOGRTnt-gzGzoHsz',
-				appKey: 'xjMwzkaejI1XsqFyH0EaYlL5'
-			})
-		</script>
+		
 		
 		
 		<!-- <h3 class="editable"># 在线邮件</h3>
