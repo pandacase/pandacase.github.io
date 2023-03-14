@@ -3,7 +3,6 @@ title: pandaBlog诞生记
 date: 2023-03-11
 description: ....
 categories:
-  - Project
   - HTML
 image: https://s1.ax1x.com/2023/03/12/ppM1bX4.jpg # 默认背景
 ---
