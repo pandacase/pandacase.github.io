@@ -27,8 +27,22 @@ layout: page
 				{% endif %}
 			</div>
 
+			<!-- Valine -->
+			<div id="vcomments"></div>
+			<script>
+				new Valine({
+					el: '#vcomments',
+					appId: 'vX0mtaqxsIPsUhp5xHOGRTnt-gzGzoHsz',
+					appKey: 'xjMwzkaejI1XsqFyH0EaYlL5',
+					placeholder: '留下你的评论吧~',	 // 文本占位符
+					meta: ['nick'],					// 输入框
+					requiredFields: ['nick'],		// 必填项
+					avatar: 'hide'					// 评论者头像
+				})
+			</script>
+			
 			<!-- 下面是基于Disqus的comments功能 -->
-			{% if site.disqus_shortname and page.comments %}
+			<!-- {% if site.disqus_shortname and page.comments %}
 				<div id="disqus_thread"></div>
 				<script>
 						var disqus_shortname = '{{ site.disqus_shortname }}';
@@ -47,7 +61,7 @@ layout: page
 						})();
 				</script>
 				<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-			{% endif %}
+			{% endif %} -->
 		</div>
 	</div>
 </section>
