@@ -49,7 +49,7 @@ image: https://s1.ax1x.com/2023/03/14/pplBuvj.jpg
 
 &emsp;&emsp; 所以最后决定学习Jekyll文档内的语法, 然后寻找一个合适的模板部署到本地进行魔改来作为自己的首个网站
 
-&emsp;&emsp; [Jekyll中文文档](http://jekyllcn.com/) 丨 [Jekyll主题网站](http://jekyllthemes.org/) 丨 [Jekyll搭建网站视频教程](https://www.bilibili.com/video/BV14x411t7ZU/)
+<!-- &emsp;&emsp; [Jekyll中文文档](http://jekyllcn.com/) 丨 [Jekyll主题网站](http://jekyllthemes.org/) 丨 [Jekyll搭建网站视频教程](https://www.bilibili.com/video/BV14x411t7ZU/) -->
 
 &emsp;&emsp; 在官方文档中可以看到Jekyll部署出来的网页目录结构还是非常人性化的, 对文章的管理非常方便. 模板语言允许在HTML中加入判断和循环语句, 而且集成了很多网页变量可以直接调用, 整个网页的开发思路变得清晰很多
 
@@ -73,7 +73,7 @@ image: https://s1.ax1x.com/2023/03/14/pplBuvj.jpg
 └── index.html
 ```
 
-&emsp;&emsp; 在本地部署完网站源码之后可以在命令行窗口中输入"jekyll serve /path"来快速生成网站预览. 这是一个比较常用的功能
+&emsp;&emsp; 在本地部署完网站源码之后可以在命令行窗口中输入"jekyll serve file_path"来快速生成网站预览. 这是一个比较常用的功能
 
 <!-- * HTML中嵌入循环和判断的模板语言示例 (Daily页面下生成文章列表的源码)
 
