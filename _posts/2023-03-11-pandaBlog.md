@@ -77,7 +77,7 @@ image: https://s1.ax1x.com/2023/03/14/pplBuvj.jpg
 
 * HTML中嵌入循环和判断的模板语言示例 (Daily页面下生成文章列表)
 
-```HTML
+```txt
 <ul class="blog-posts">
     {% for post in site.posts %}
         {% if post.categories[0] == "Daily" %}
