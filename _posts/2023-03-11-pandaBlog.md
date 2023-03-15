@@ -17,7 +17,7 @@ image: https://s1.ax1x.com/2023/03/14/pplBuvj.jpg
 
 &emsp;&emsp; 所以我主要也是朝着这几个功能去做的, 不过一般CSE学生的博客网站都是在更项目型Blog. 个人的话还想加入更新一些日常趣事的栏目, 因为原先在米游社里面有时候就会心血来潮更几篇这种类型的文章, 然后自己每时隔一段时间回去翻看的话总能收获美好的回忆 (大多数时候是hhh).
 
-### 页面介绍
+## # 页面介绍
 
 ![Home](https://s1.ax1x.com/2023/03/15/pp3uaDJ.png)
 
@@ -35,7 +35,7 @@ image: https://s1.ax1x.com/2023/03/14/pplBuvj.jpg
 
 &emsp;&emsp; 3. 在Blog页面进行一个标签的细化分类, 方便访问者按标签检索文章(不过这个功能要等我文章更新多了才会考虑做hhh)
 
-### 开发过程
+## # 开发过程
 
 &emsp;&emsp; 一开始有这个想法的时候还对网页开发这件事如何进行完全没有概念, 百度之后才知道大概是怎么回事...
 
@@ -49,7 +49,8 @@ image: https://s1.ax1x.com/2023/03/14/pplBuvj.jpg
 
 &emsp;&emsp; [Jekyll中文文档](http://jekyllcn.com/)
 
-&emsp;&emsp; 在官方文档中可以看到Jekyll部署出来的网页目录结构还是非常
+&emsp;&emsp; 在官方文档中可以看到Jekyll部署出来的网页目录结构还是非常人性化的,
+
 ```
 .
 ├── _config.yml
