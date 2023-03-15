@@ -78,20 +78,20 @@ image: https://s1.ax1x.com/2023/03/14/pplBuvj.jpg
 * HTML中嵌入循环和判断的模板语言示例 (Daily页面下生成文章列表)
 
 ```HTML
-<!-- <ul class="blog-posts">
+<ul class="blog-posts">
     {% for post in site.posts %}
         {% if post.categories[0] == "Daily" %}
-        <li class="blog-post">
+        <!-- <li class="blog-post">
             <h2><a href="{% include relative-src.html src=post.url %}">{{ post.title }}</a></h2>
             {% include post-title.html post=post %}
             <div class="post-content">
                 {{ post.excerpt }}
                 <div class="button"><a href="{% include relative-src.html src=post.url %}">查看文章</a></div>
             </div>
-        </li>
+        </li> -->
         {% endif %}
     {% endfor %}
-</ul> -->
+</ul>
 ```
 
 &emsp;&emsp; 至于网页中的大部分背景图片, 目前是部署在国内的[路过图床](https://imgse.com/)下, 不过这个图床好像没有随机图片链接的功能, 后续可能会考虑更换图床. 然后图标的制作是使用Ai来绘制.svg矢量图. 完整的源码在底部导航栏的GitHub链接中可以找到.
