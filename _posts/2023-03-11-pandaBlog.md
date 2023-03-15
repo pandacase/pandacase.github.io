@@ -75,7 +75,7 @@ image: https://s1.ax1x.com/2023/03/14/pplBuvj.jpg
 
 &emsp;&emsp; 在本地部署完网站源码之后可以在命令行窗口中输入"jekyll serve file_path"来快速生成网站预览. 这是一个比较常用的功能
 
-<!-- * HTML中嵌入循环和判断的模板语言示例 (Daily页面下生成文章列表的源码)
+* HTML中嵌入循环和判断的模板语言示例 (Daily页面下生成文章列表的源码)
 
 ```HTML
 <ul class="blog-posts">
@@ -92,7 +92,7 @@ image: https://s1.ax1x.com/2023/03/14/pplBuvj.jpg
         {% endif %}
     {% endfor %}
 </ul>
-``` -->
+```
 
 &emsp;&emsp; 至于网页中的大部分背景图片, 目前是部署在国内的[路过图床](https://imgse.com/)下, 不过这个图床好像没有随机图片链接的功能, 后续可能会考虑更换图床. 然后图标的制作是使用Ai来绘制.svg矢量图. 完整的源码在底部导航栏的GitHub链接中可以找到.
 
