@@ -9,7 +9,7 @@ image: https://s1.ax1x.com/2023/03/14/pplBuvj.jpg
 
 &emsp;&emsp; 在22年下半年通过某些渠道看到了一个不认识的同学的博客网站 [Stalo's Blog](https://jin-yuhan.github.io/) 点进去后被好看的UI和动画效果震撼到了, 所以就萌生了想自己也建一个网站的想法.
 
-之后翻了很多中大学长的博客网站, 发现网站的功能主要有如下几种:
+* 之后翻了很多中大学长的博客网站, 发现网站的功能主要有如下几种:
 
 1. 发表文章
 2. 在线留言
@@ -75,7 +75,7 @@ image: https://s1.ax1x.com/2023/03/14/pplBuvj.jpg
 
 &emsp;&emsp; 在本地部署完网站源码之后可以在命令行窗口中输入"jekyll serve file_path"来快速生成网站预览. 这是一个比较常用的功能
 
-* HTML中嵌入循环和判断的模板语言示例 (Daily页面下生成文章列表的源码)
+* HTML中嵌入循环和判断的模板语言示例 (Daily页面下生成文章列表)
 
 ```HTML
 <ul class="blog-posts">
