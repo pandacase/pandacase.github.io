@@ -79,18 +79,18 @@ image: https://s1.ax1x.com/2023/03/14/pplBuvj.jpg
 
 ```HTML
 <ul class="blog-posts">
-    {% for post in site.posts %}
-        {% if post.categories[0] == "Daily" %}
-        <!-- <li class="blog-post">
+    <!-- {% for post in site.posts %} -->
+        <!-- {% if post.categories[0] == "Daily" %} -->
+        <li class="blog-post">
             <h2><a href="{% include relative-src.html src=post.url %}">{{ post.title }}</a></h2>
             {% include post-title.html post=post %}
             <div class="post-content">
                 {{ post.excerpt }}
                 <div class="button"><a href="{% include relative-src.html src=post.url %}">查看文章</a></div>
             </div>
-        </li> -->
-        {% endif %}
-    {% endfor %}
+        </li>
+        <!-- {% endif %} -->
+    <!-- {% endfor %} -->
 </ul>
 ```
 
