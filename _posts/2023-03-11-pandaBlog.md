@@ -41,6 +41,8 @@ image: https://s1.ax1x.com/2023/03/14/pplBuvj.jpg
 
 &emsp;&emsp; 然后就在b站找了个前端三件套教程从头开始学起(HTML, CSS, JavaScript), 这三件套里面让我受阻的实际上是CSS, 难倒是不难, 但是零零碎碎的知识点实在太多了! 学着学着就容易断掉. HTML的话没什么好说的, 很简单而且内容也很少. JS的话语法上是C和Python的结合体, 所以上手也比较快.
 
+&emsp;&emsp; 附上一个Web开发文档: [MDN](https://developer.mozilla.org/zh-CN/)
+
 &emsp;&emsp; 基础的前端知识学的差不多的时候, 有试着过模仿一些知名网站(如京东, b站)做一些小模块出来. 不过实际上发现要从头做一个UI好看的网站还是非常难的, 身边那些有博客网站的学长都是从中学时代就开始做起, 而我才学了几个月...
 
 &emsp;&emsp; 不过最后还是在中大学长的博客网站里面找到了突破口, 他的网站是用Jekyll生成的. Jekyll是一个简单的博客网站生成器, 在GitHub上开源. 如果用Jekyll来构建博客网站, 可以直接使用他的模板语言, 整个网页结构的部署会简单得多, 而且因为有了模板语言, GitHub上面就能找到许多使用Jekyll构建的模板网页出来
@@ -49,7 +51,7 @@ image: https://s1.ax1x.com/2023/03/14/pplBuvj.jpg
 
 &emsp;&emsp; [Jekyll中文文档](http://jekyllcn.com/)
 
-&emsp;&emsp; 在官方文档中可以看到Jekyll部署出来的网页目录结构还是非常人性化的,
+&emsp;&emsp; 在官方文档中可以看到Jekyll部署出来的网页目录结构还是非常人性化的, 对文章的管理非常方便. 模板语言允许在HTML中加入判断和循环语句, 而且集成了很多网页变量可以直接调用, 整个网页的开发思路变得清晰很多
 
 ```
 .
@@ -70,3 +72,36 @@ image: https://s1.ax1x.com/2023/03/14/pplBuvj.jpg
 ├── .jekyll-metadata
 └── index.html
 ```
+
+&emsp;&emsp; 至于网页中的大部分背景图片, 目前是部署在国内的[路过图床](https://imgse.com/)下, 不过这个图床好像没有随机图片链接的功能, 后续可能会考虑更换图床. 然后图标的制作是使用Ai来绘制.svg矢量图. 网站的源码在底部导航栏的GitHub链接中可以找到.
+
+&emsp;&emsp; 然后网页后端其实内置了一个浏览量统计, 调用的是百度统计的API:
+
+```HTML
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js...";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+```
+
+&emsp;&emsp; 评论区功能则更迭过两个API, 之前用的是来必力的支持社交账号(微信/微博/QQ)登录的评论系统, 但是加载比较慢而且在移动端下有无法拉取微信登录API的bug; 所以后来改用了Valine的可支持匿名的评论系统, 也就是现在在用的这个评论区. 可以看到这个API支持在Script块中直接更改属性设置, 还是比较易用的
+
+```HTML
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'my_ID',
+        appKey: 'my_Key',
+        placeholder: '留下你的评论吧~',// 文本占位符
+        meta: ['nick'],// 输入框
+        requiredFields: ['nick'],// 必填项
+        avatar: 'hide'// 评论者头像
+    })
+</script>
+```
+
