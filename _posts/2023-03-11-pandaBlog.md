@@ -9,7 +9,7 @@ image: https://s1.ax1x.com/2023/03/14/pplBuvj.jpg
 
 &emsp;&emsp; 在22年下半年通过某些渠道看到了一个不认识的同学的博客网站 [Stalo's Blog](https://jin-yuhan.github.io/) 点进去后被好看的UI和动画效果震撼到了, 所以就萌生了想自己也建一个网站的想法.
 
-* 之后翻了很多中大学长的博客网站, 发现网站的功能主要有如下几种:
+之后翻了很多中大学长的博客网站, 发现网站的功能主要有如下几种:
 
 1. 发表文章
 2. 在线留言
@@ -49,7 +49,7 @@ image: https://s1.ax1x.com/2023/03/14/pplBuvj.jpg
 
 &emsp;&emsp; 所以最后决定学习Jekyll文档内的语法, 然后寻找一个合适的模板部署到本地进行魔改来作为自己的首个网站
 
-<!-- &emsp;&emsp; [Jekyll中文文档](http://jekyllcn.com/) 丨 [Jekyll主题网站](http://jekyllthemes.org/) 丨 [Jekyll搭建网站视频教程](https://www.bilibili.com/video/BV14x411t7ZU/) -->
+&emsp;&emsp; [Jekyll中文文档](http://jekyllcn.com/) 丨 [Jekyll主题网站](http://jekyllthemes.org/) 丨 [Jekyll搭建网站视频教程](https://www.bilibili.com/video/BV14x411t7ZU/)
 
 &emsp;&emsp; 在官方文档中可以看到Jekyll部署出来的网页目录结构还是非常人性化的, 对文章的管理非常方便. 模板语言允许在HTML中加入判断和循环语句, 而且集成了很多网页变量可以直接调用, 整个网页的开发思路变得清晰很多
 
@@ -75,7 +75,7 @@ image: https://s1.ax1x.com/2023/03/14/pplBuvj.jpg
 
 &emsp;&emsp; 在本地部署完网站源码之后可以在命令行窗口中输入"jekyll serve /path"来快速生成网站预览. 这是一个比较常用的功能
 
-* HTML中嵌入循环和判断的模板语言示例 (Daily页面下生成文章列表的源码)
+<!-- * HTML中嵌入循环和判断的模板语言示例 (Daily页面下生成文章列表的源码)
 
 ```HTML
 <ul class="blog-posts">
@@ -92,7 +92,7 @@ image: https://s1.ax1x.com/2023/03/14/pplBuvj.jpg
         {% endif %}
     {% endfor %}
 </ul>
-```
+``` -->
 
 &emsp;&emsp; 至于网页中的大部分背景图片, 目前是部署在国内的[路过图床](https://imgse.com/)下, 不过这个图床好像没有随机图片链接的功能, 后续可能会考虑更换图床. 然后图标的制作是使用Ai来绘制.svg矢量图. 完整的源码在底部导航栏的GitHub链接中可以找到.
 
