@@ -1,7 +1,7 @@
 ---
 title: pandaBlog诞生记
 date: 2023-03-11
-description: 这个背景图选用的是目前在用的浏览器主页背景~ 是用PowerPoint的简单三角形+虚化效果制作的
+description: (这个背景图是写这篇文章时在用的浏览器主页背景, 是用PowerPoint的简单三角形+虚化效果制作的)
 categories:
   - Web开发
 image: https://s1.ax1x.com/2023/03/14/pplBuvj.jpg
