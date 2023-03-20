@@ -53,7 +53,7 @@ image: https://s1.ax1x.com/2023/03/14/pplBuvj.jpg
 
 &emsp;&emsp; 在官方文档中可以看到Jekyll部署出来的网页目录结构还是非常人性化的, 对文章的管理非常方便. 模板语言允许在HTML中加入判断和循环语句, 而且集成了很多网页变量可以直接调用. 在比对了官方文档和模板的源码之后, 对个人网页的开发思路变得清晰很多
 
-```txt {.line-numbers}
+```txt
 .
 ├── _config.yml
 ├── _drafts
@@ -86,16 +86,16 @@ image: https://s1.ax1x.com/2023/03/14/pplBuvj.jpg
 ### 浏览量统计, 调用的是[百度统计](https://tongji.baidu.com/web5/welcome/login)的API:
 
 
-```html {.line-numbers}
-    <script>
-        var _hmt = _hmt || [];
-        (function() {
-            var hm = document.createElement("script");
-            hm.src = "https://hm.baidu.com/hm.js...";
-            var s = document.getElementsByTagName("script")[0]; 
-            s.parentNode.insertBefore(hm, s);
-        })();
-    </script>
+```html
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js...";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
 ```
 
 
@@ -103,7 +103,7 @@ image: https://s1.ax1x.com/2023/03/14/pplBuvj.jpg
 
 &emsp;&emsp; 评论区功能则更迭过两个API, 之前用的是来必力的支持社交账号(微信/微博/QQ)登录的评论系统, 但是加载比较慢而且在移动端下有无法拉取微信登录API的bug; 所以后来改用了Valine的可支持匿名的评论系统, 也就是现在在用的这个评论区. 可以看到这个API支持在Script块中直接更改属性设置, 还是比较易用的. 具体的配置信息可以查看 [Valine快速开始](https://valine.js.org/quickstart.html)
 
-```html {.line-numbers}
+```html
 <script>
     new Valine({
         el: '#vcomments',
