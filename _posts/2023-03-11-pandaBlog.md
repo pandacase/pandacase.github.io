@@ -53,6 +53,7 @@ image: https://s1.ax1x.com/2023/03/14/pplBuvj.jpg
 
 &emsp;&emsp; 在官方文档中可以看到Jekyll部署出来的网页目录结构还是非常人性化的, 对文章的管理非常方便. 模板语言允许在HTML中加入判断和循环语句, 而且集成了很多网页变量可以直接调用, 整个网页的开发思路变得清晰很多
 
+```
 {% highlight txt linenos %}
 .
 ├── _config.yml
@@ -72,6 +73,7 @@ image: https://s1.ax1x.com/2023/03/14/pplBuvj.jpg
 ├── .jekyll-metadata
 └── index.html
 {% endhighlight %}
+```
 
 &emsp;&emsp; 在本地部署完网站源码之后可以在命令行窗口中输入"jekyll serve file_path"来快速生成网站预览. 这是一个比较常用的功能
 
@@ -85,6 +87,7 @@ image: https://s1.ax1x.com/2023/03/14/pplBuvj.jpg
 
 ### 浏览量统计, 调用的是百度统计的API:
 
+```html
 {% highlight html linenos %}
 <script>
     var _hmt = _hmt || [];
@@ -96,11 +99,13 @@ image: https://s1.ax1x.com/2023/03/14/pplBuvj.jpg
     })();
 </script>
 {% endhighlight %}
+```
 
 ### 评论区功能：
 
 &emsp;&emsp; 评论区功能则更迭过两个API, 之前用的是来必力的支持社交账号(微信/微博/QQ)登录的评论系统, 但是加载比较慢而且在移动端下有无法拉取微信登录API的bug; 所以后来改用了Valine的可支持匿名的评论系统, 也就是现在在用的这个评论区. 可以看到这个API支持在Script块中直接更改属性设置, 还是比较易用的. 具体的配置信息可以查看 [Valine快速开始](https://valine.js.org/quickstart.html)
 
+```html
 {% highlight html linenos %}
 <script>
     new Valine({
@@ -114,6 +119,7 @@ image: https://s1.ax1x.com/2023/03/14/pplBuvj.jpg
     })
 </script>
 {% endhighlight %}
+```
 
 &emsp;&emsp; 网站最后是部署在GitHub Pages下, 之后如果内容更新多了可能会考虑自己租用域名来做映射
 
