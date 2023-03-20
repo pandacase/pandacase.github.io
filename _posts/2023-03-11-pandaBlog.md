@@ -86,15 +86,15 @@ image: https://s1.ax1x.com/2023/03/14/pplBuvj.jpg
 ### 浏览量统计, 调用的是百度统计的API:
 
 {% highlight ruby linenos %}
-<script>
-    var _hmt = _hmt || [];
-    (function() {
-        var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js...";
-        var s = document.getElementsByTagName("script")[0]; 
-        s.parentNode.insertBefore(hm, s);
-    })();
-</script>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js...";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
 {% endhighlight %}
 
 ### 评论区功能：
