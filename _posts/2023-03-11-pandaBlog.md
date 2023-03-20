@@ -105,7 +105,6 @@ image: https://s1.ax1x.com/2023/03/14/pplBuvj.jpg
 
 &emsp;&emsp; 评论区功能则更迭过两个API, 之前用的是来必力的支持社交账号(微信/微博/QQ)登录的评论系统, 但是加载比较慢而且在移动端下有无法拉取微信登录API的bug; 所以后来改用了Valine的可支持匿名的评论系统, 也就是现在在用的这个评论区. 可以看到这个API支持在Script块中直接更改属性设置, 还是比较易用的. 具体的配置信息可以查看 [Valine快速开始](https://valine.js.org/quickstart.html)
 
-```html
 {% highlight html %}
 <script>
     new Valine({
@@ -119,7 +118,6 @@ image: https://s1.ax1x.com/2023/03/14/pplBuvj.jpg
     })
 </script>
 {% endhighlight %}
-```
 
 &emsp;&emsp; 网站最后是部署在GitHub Pages下, 之后如果内容更新多了可能会考虑自己租用域名来做映射
 
