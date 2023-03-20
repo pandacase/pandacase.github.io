@@ -55,6 +55,10 @@
 		margin: 0;
 	}
 
+	p::before{
+        content:'    ';
+    }
+
 	.post-details {
 		border-bottom: 1px solid #eee;
 		font-size: .9em;
