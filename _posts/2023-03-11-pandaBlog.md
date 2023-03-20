@@ -53,7 +53,7 @@ image: https://s1.ax1x.com/2023/03/14/pplBuvj.jpg
 
 &emsp;&emsp; 在官方文档中可以看到Jekyll部署出来的网页目录结构还是非常人性化的, 对文章的管理非常方便. 模板语言允许在HTML中加入判断和循环语句, 而且集成了很多网页变量可以直接调用, 整个网页的开发思路变得清晰很多
 
-{% highlight txt %}
+```txt
 .
 ├── _config.yml
 ├── _drafts
@@ -71,7 +71,7 @@ image: https://s1.ax1x.com/2023/03/14/pplBuvj.jpg
 ├── _site
 ├── .jekyll-metadata
 └── index.html
-{% endhighlight %}
+```
 
 &emsp;&emsp; 在本地部署完网站源码之后可以在命令行窗口中输入"jekyll serve file_path"来快速生成网站预览. 这是一个比较常用的功能
 
