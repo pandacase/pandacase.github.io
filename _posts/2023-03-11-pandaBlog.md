@@ -85,6 +85,7 @@ image: https://s1.ax1x.com/2023/03/14/pplBuvj.jpg
 
 ### 浏览量统计, 调用的是[百度统计](https://tongji.baidu.com/web5/welcome/login)的API:
 
+```html
 {% highlight html linenos %}
 <script>
     var _hmt = _hmt || [];
@@ -96,6 +97,7 @@ image: https://s1.ax1x.com/2023/03/14/pplBuvj.jpg
     })();
 </script>
 {% endhighlight %}
+```
 
 ### 评论区功能：
 
