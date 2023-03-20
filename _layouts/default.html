@@ -14,13 +14,13 @@
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300|Rubik:300">
 		<link rel="stylesheet" href="{{ site.baseurl }}/css/screen.css">
-		
+
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/prismjs@1.21.0/plugins/line-numbers/prism-line-numbers.min.css,npm/prismjs@1.21.0/plugins/toolbar/prism-toolbar.min.css,npm/prismjs@1.21.0/plugins/match-braces/prism-match-braces.min.css,npm/prism-themes@1.4.0/themes/prism-nord.min.css"/>
-		<script>
+		<script
 			src="https://cdn.jsdelivr.net/combine/npm/prismjs@1.21.0/components/prism-core.min.js,npm/prismjs@1.21.0/plugins/autoloader/prism-autoloader.min.js,npm/prismjs@1.21.0/plugins/line-numbers/prism-line-numbers.min.js,npm/prismjs@1.21.0/plugins/toolbar/prism-toolbar.min.js,npm/prismjs@1.21.0/plugins/match-braces/prism-match-braces.min.js"
 			async="async"
-			data-autoloader-path = "https://cdn.jsdelivr.net/npm/prismjs@1.21.0/components/"
-			onload = '
+			data-autoloader-path="https://cdn.jsdelivr.net/npm/prismjs@1.21.0/components/"
+			onload='
 				document.body.classList.add("line-numbers","match-braces");
 				Prism.plugins.toolbar.registerButton("select-code", function (env) {
 				let button = document.createElement("button");
@@ -39,8 +39,8 @@
 					}
 				});
 				return button;
-			})'
-		</script>
+				})'
+			></script>
 
 
 		{% if jekyll.environment == 'production' and site.google_analytics_key != '' %}
