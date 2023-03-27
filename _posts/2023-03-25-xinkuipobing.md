@@ -87,7 +87,7 @@ image: https://s1.ax1x.com/2023/03/27/ppsUlss.png
 
 * zb师弟给我的返图：(当天晚上在宿舍疯狂向宿友展示我包的饺子哈哈哈哈哈)
 
-![iamge](https://s1.ax1x.com/2023/03/27/ppshuMn.png)
+![iamge](https://s1.ax1x.com/2023/03/27/ppy1Bx1.jpg)
 
 * 当dyh在浏览器历史搜索框里面输入关键字“饺子”时：
 
