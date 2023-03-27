@@ -4,7 +4,6 @@ date: 2023-03-27
 description: 本期背景图彩蛋：是去年暑假支教活动的破冰ppt的背景图（刚好当时ppt是我做的
 categories: 
   - Daily
-  - 心葵
 image: https://s1.ax1x.com/2023/03/27/ppsUlss.png
 ---
 
