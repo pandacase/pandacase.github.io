@@ -130,5 +130,5 @@ image: https://s1.ax1x.com/2023/03/14/pplBuvj.jpg
 
 &emsp;&emsp; 网站目前是部署在GitHub Pages下, 之后如果内容更新多了可能会考虑自己租用域名来做映射
 
-&emsp;&emsp; 至此, pandaBlog就初步完成啦! 作为本站的第一篇文章, 写的有亿点啰嗦hh. 感谢你阅读到这里, 留个评论再走吧~
+&emsp;&emsp; 至此, pandaBlog就初步完成啦! 作为本站的第一篇完成的文章, 写的有亿点啰嗦hh. 感谢你阅读到这里, 留个评论再走吧~
 
