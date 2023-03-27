@@ -1,7 +1,7 @@
 ---
 title: 心葵破冰！
 date: 2023-03-25
-description: 本期背景图彩蛋：是去年暑假支教活动的破冰ppt的背景图~
+description: 本期背景图彩蛋：是去年暑假支教活动的破冰ppt的背景图~ 刚好当时ppt也是我做的，太巧了不是吗hhh
 categories: 
   - Daily
 image: https://s1.ax1x.com/2023/03/27/ppsUlss.png
