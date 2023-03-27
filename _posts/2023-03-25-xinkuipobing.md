@@ -1,8 +1,8 @@
 ---
 title: 心葵破冰！
 date: 2023-03-25
-description: 第一学期学校提前宣布返乡了，所以推迟到第二学期才举办的心葵破冰
-categories: 本期背景图彩蛋：是去年暑假支教活动的破冰ppt的背景图~
+description: 本期背景图彩蛋：是去年暑假支教活动的破冰ppt的背景图~
+categories: 
   - Daily
 image: https://s1.ax1x.com/2023/03/27/ppsUlss.png
 ---
