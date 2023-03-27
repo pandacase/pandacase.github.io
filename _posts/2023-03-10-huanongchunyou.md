@@ -1,8 +1,8 @@
 ---
 title: 华农春游 ♪ ~
 date: 2023-03-10
-description: 
-categories: 本期背景图彩蛋：进校门后第一站就是这里——华农行政楼
+description: 本期背景图彩蛋：进校门后第一站就是这里——华农行政楼
+categories: 
   - Daily
 image: https://s1.ax1x.com/2023/03/24/ppBDqU0.jpg # 默认背景
 ---
