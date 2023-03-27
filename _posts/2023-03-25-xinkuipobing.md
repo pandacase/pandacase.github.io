@@ -93,7 +93,7 @@ image: https://s1.ax1x.com/2023/03/27/ppsUlss.png
 
 ![iamge](https://s1.ax1x.com/2023/03/27/ppsgly6.jpg)
 
-* 以及最后的最后在半夜收到来自陈乡长的肯定：
+* 以及最后的最后在半夜收到来自陈乡长的夸赞：
 
 ![iamge](https://s1.ax1x.com/2023/03/27/ppsLrng.jpg)
 
