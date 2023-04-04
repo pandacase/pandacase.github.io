@@ -66,6 +66,26 @@
 				}'
 		  ></script>
 		  
+		<!-- 公式渲染 -->
+		<link
+			rel="stylesheet"
+			href="//cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+		/>
+		<script
+			src="//cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
+			defer="defer"
+		></script>
+		<script
+			src="//cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+			defer="defer"
+			onload='renderMathInElement(document.body, { delimiters: [{left: "$$", right: "$$", display: true}, { left: "$", right: "$", display: false }, {left: "\\(", right: "\\)", display: false}, {left: "\\[", right: "\\]", display: true}]})'
+		></script>
+		<script
+			src="//cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/mathtex-script-type.min.js"
+			defer="defer"
+		></script>
+
+
 
 		<!-- {% if jekyll.environment == 'production' and site.google_analytics_key != '' %}
 			<script>
