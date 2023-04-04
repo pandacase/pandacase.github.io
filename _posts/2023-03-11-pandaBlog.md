@@ -85,14 +85,18 @@ image: https://s1.ax1x.com/2023/03/14/pplBuvj.jpg
 
 &emsp;&emsp; 然后图标的制作是使用Ai来绘制.svg矢量图. 完整的源码在底部导航栏的GitHub链接中可以找到.
 
-## # 添加代码块和高亮
+## # Markdown渲染（代码块/流程图/公式）
 
 &emsp;&emsp; Jekyll实际上自带了一个默认的渲染器rough, 具体用法可以参考官方文档中关于"配置"和"博客"中的内容. 不过网上也有很多现成的css方案, 可以自己去找合适的css链接(一般还会附带JS链接用以实现显示行号和复制代码的按钮)放入\<head>中即可。
+
+&emsp;&emsp; 我参考的是一位本校师兄的渲染方案（附上他的web blog：[wukan](https://wu-kan.cn/2019/01/18/%E5%9F%BA%E4%BA%8EJekyll%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/)）。
+
+&emsp;&emsp; 代码块及代码高亮采用的渲染模块是 [Prism](https://prismjs.com/)，这个官网的首页除了会教你如何使用他的渲染器，还列出了所有支持渲染的语言，进入网页后你可以直接 ctrl + f 输入语言进行搜索。
 
 
 ## # 添加API
 
-* #### 浏览量统计, 调用的是[百度统计](https://tongji.baidu.com/web5/welcome/login)的API:
+* #### 浏览量统计（含分析）, 调用的是[百度统计](https://tongji.baidu.com/web5/welcome/login)的API:
 
 
 ```html
