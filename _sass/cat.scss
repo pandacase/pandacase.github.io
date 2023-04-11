@@ -208,21 +208,12 @@
         transform: rotateZ(-16deg);
     }
 }
-body {
-    background-color: #abe7db;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
 
-.main {
+.whole_cat {
     height: 400px;
     width: 400px;
-    position: relative;
-    top: -50px
 }
-.main .stand {
+.whole_cat .stand {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -233,7 +224,7 @@ body {
     background-color: #fd6e72;
     z-index: 2;
 }
-.main .stand::after {
+.whole_cat .stand::after {
     content: "";
     position: absolute;
     bottom: -10px;
@@ -245,7 +236,7 @@ body {
     background-color: #fdf9de;
     box-shadow: 0 10px 0 #fdf9de, 0 20px 0 #fdf9de, 0 30px 0 #fdf9de, 0 40px 0 #fdf9de, 0 50px 0 #fdf9de, 0 60px 0 #fdf9de, 0 70px 0 #fdf9de, 0 80px 0 #fdf9de, 0 90px 0 #fdf9de, 0 100px 0 #fdf9de, 0 110px 0 #fdf9de, 0 120px 0 #fdf9de, 0 130px 0 #fdf9de, 0 140px 0 #fdf9de, 0 150px 0 #fdf9de, 0 160px 0 #fdf9de, 0 170px 0 #fdf9de;
 }
-.main .cat {
+.whole_cat .cat {
     width: 110px;
     height: 50px;
     position: absolute;
@@ -254,7 +245,7 @@ body {
     border-top-left-radius: 100px;
     border-top-right-radius: 100px;
 }
-.main .cat .body {
+.whole_cat .cat .body {
     width: 110px;
     height: 50px;
     background-color: #745260;
@@ -263,7 +254,7 @@ body {
     border-top-right-radius: 100px;
     animation: body 12s none infinite;
 }
-.main .cat .head {
+.whole_cat .cat .head {
     content: "";
     width: 70px;
     height: 35px;
