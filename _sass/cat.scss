@@ -24,6 +24,7 @@
         transform: rotate(10deg);
     }
 }
+
 @keyframes cat_body {
     6.6666666667% {
         transform: scaleY(1);
@@ -50,6 +51,7 @@
         transform: scaleY(1.15);
     }
 }
+
 @keyframes left-whisker {
     6.6666666667% {
         transform: rotate(0);
@@ -76,6 +78,7 @@
         transform: rotate(10deg);
     }
 }
+
 @keyframes right-whisker {
     6.6666666667% {
         transform: rotate(180deg);
@@ -102,6 +105,7 @@
         transform: rotate(175deg);
     }
 }
+
 @keyframes left-ear {
     0% {
         transform: rotate(-20deg);
@@ -140,6 +144,7 @@
         transform: rotateZ(-6deg);
     }
 }
+
 @keyframes right-ear {
     0% {
         transform: rotateZ(-16deg);
