@@ -24,7 +24,7 @@
         transform: rotate(10deg);
     }
 }
-@keyframes body {
+@keyframes cat_body {
     6.6666666667% {
         transform: scaleY(1);
     }
@@ -213,7 +213,7 @@
     height: 400px;
     width: 400px;
 }
-.whole_cat .stand {
+.whole_cat .stand_for_cat {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -224,7 +224,7 @@
     background-color: #fd6e72;
     z-index: 2;
 }
-.whole_cat .stand::after {
+.whole_cat .stand_for_cat::after {
     content: "";
     position: absolute;
     bottom: -10px;
