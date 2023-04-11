@@ -21,7 +21,6 @@
 
 	changeHeader();
 
-
 	document.getElementById("open-nav").addEventListener("tap", function (event) {
 		event.preventDefault();
 		document.body.classList.toggle("nav-open");
