@@ -27,6 +27,12 @@
 		changeHeader();
 	});
 
+	document.getElementById("open-nav").addEventListener("tap", function (event) {
+		event.preventDefault();
+		document.body.classList.toggle("nav-open");
+		changeHeader();
+	});
+
 	$("a[href*=\\#]").on("click", function (event) {
 		if(this.pathname === window.location.pathname) {
 			event.preventDefault();
