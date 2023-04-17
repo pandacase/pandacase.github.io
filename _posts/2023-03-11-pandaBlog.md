@@ -61,11 +61,13 @@ image: https://s1.ax1x.com/2023/03/14/pplBuvj.jpg
 
 ## # 这里是Jekyll
 
-&emsp;&emsp; Jekyll是一个简单的博客网站生成器, 在GitHub上开源. 如果用Jekyll来构建博客网站, 可以直接使用他的模板语言和头信息结构, 整个网页结构的部署会简单得多。 而且因为有了模板语言, GitHub上面就能找到许多使用Jekyll构建的模板网页项目出来
+&emsp;&emsp; Jekyll是一个简单的博客网站生成器, 在GitHub上开源. 如果用Jekyll来构建博客网站, 可以直接使用他的模板语言和头信息结构, 整个网页结构的部署会简单得多。 而且因为有了模板语言, GitHub上面就能找到许多使用Jekyll构建的模板网页项目出来。顺带一提，除了Jekyll其实还有其他框架，比如大部分在用的Hexo（实际上这个相比Jekyll会更多人用），不过为什么我最后选了Jekyll呢，因为我所参考的中大学长的博客是从Hexo改用到Jekyll的，他的理由是Hexo搭建的博客需要先在本地生成博客页面后再上传到服务器上，也就是说每次发博客需要在电脑重新生成页面后再上传。
 
 &emsp;&emsp; 所以最后决定学习Jekyll文档内的语法, 然后寻找一个合适的模板部署到本地进行魔改来作为自己的首个网站(同时学习别人的web代码结构)
 
 &emsp;&emsp; [Jekyll中文文档](http://jekyllcn.com/) 丨 [Jekyll主题网站](http://jekyllthemes.org/) 丨 [Jekyll搭建网站视频教程](https://www.bilibili.com/video/BV14x411t7ZU/)
+
+&emsp;&emsp; 如果你看了一会Jekyll文档之后还是毫无头绪的话，可以看一下上面的视频链接，然后尝试自己动手一试！
 
 &emsp;&emsp; 在官方文档中可以看到Jekyll部署出来的网页目录结构还是非常人性化的。对文章的管理非常方便. 模板语言允许在HTML中加入判断和循环语句, 而且集成了很多网页变量可以直接调用. 在比对了官方文档和模板的源码之后, 个人网页的开发思路变得清晰很多
 
