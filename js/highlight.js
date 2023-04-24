@@ -1,5 +1,5 @@
 // onload:
-window.onload = function initCodeHighlight(){
+function initCodeHighlight(){
     document.body.classList.add("line-numbers","match-braces");
     Prism.plugins.toolbar.registerButton("select-code", function (env) {
     let button = document.createElement("button");
@@ -20,3 +20,5 @@ window.onload = function initCodeHighlight(){
     return button;
     });
 }
+
+window.onload = initCodeHighlight;
