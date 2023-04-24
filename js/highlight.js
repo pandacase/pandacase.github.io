@@ -16,8 +16,6 @@ window.onload = function initCodeHighlight(){
         selection.removeAllRanges();
         selection.addRange(range);
         }
-
-
     });
     return button;
     });
