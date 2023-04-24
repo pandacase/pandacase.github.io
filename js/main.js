@@ -43,7 +43,7 @@
 	var originalTitle = document.title; // 保存原来的页面标题
 	var timeoutId; // 定义一个定时器 ID
 	window.onblur = function() {
-		document.title = '欸!!?? (*ﾟﾛﾟ)!!'; // 更改页面标题为“未响应！”
+		document.title = '欸！！？？ (*ﾟﾛﾟ)!!'; // 更改页面标题为“未响应！”
 	}
 	window.onfocus = function() {
 		document.title = '没什么事啦(*σ´∀`)σ'; // 显示“骗你啦~”提示
