@@ -21,28 +21,7 @@
 			src="https://cdn.jsdelivr.net/combine/npm/prismjs@1.21.0/components/prism-core.min.js,npm/prismjs@1.21.0/plugins/autoloader/prism-autoloader.min.js,npm/prismjs@1.21.0/plugins/line-numbers/prism-line-numbers.min.js,npm/prismjs@1.21.0/plugins/toolbar/prism-toolbar.min.js,npm/prismjs@1.21.0/plugins/match-braces/prism-match-braces.min.js"
 			async="async"
 			data-autoloader-path="https://cdn.jsdelivr.net/npm/prismjs@1.21.0/components/"
-			onload='
-				document.body.classList.add("line-numbers","match-braces");
-				Prism.plugins.toolbar.registerButton("select-code", function (env) {
-				let button = document.createElement("button");
-				button.textContent = "select this " + env.language;
-				button.addEventListener("click", function () {
-					if (document.body.createTextRange) {
-					let range = document.body.createTextRange();
-					range.moveToElementText(env.element);
-					range.select();
-					} else if (window.getSelection) {
-					let selection = window.getSelection();
-					let range = document.createRange();
-					range.selectNodeContents(env.element);
-					selection.removeAllRanges();
-					selection.addRange(range);
-					}
-
-
-				});
-				return button;
-				})'
+			onload="{{ site.baseurl }}/js/highlight.js"
 		></script>
 
 		<!-- 流程图渲染 -->
