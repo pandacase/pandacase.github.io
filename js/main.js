@@ -40,17 +40,17 @@
 
 
 	// 网页标题
-	var originalTitle = document.title; // 保存原来的页面标题
-	var timeoutId; // 定义一个定时器 ID
+	var originalTitle = document.title;
+	var timeoutId; // 定时器 ID
 	window.onblur = function() {
-		document.title = '欸！！？？ (*ﾟﾛﾟ)!!'; // 更改页面标题为“未响应！”
+		document.title = '欸！！？？ (*ﾟﾛﾟ)!!';
 	}
 	window.onfocus = function() {
-		document.title = '没什么事啦 (*σ´∀`)σ'; // 显示“骗你啦~”提示
-		clearTimeout(timeoutId); // 清除之前的定时器
+		document.title = '没什么事啦 (*σ´∀`)σ';
+		clearTimeout(timeoutId); // 清除定时器
 		timeoutId = setTimeout(function() {
-			document.title = originalTitle; // 更改回原来的页面标题
-		}, 1000); // 一秒钟后将页面标题更改回原来的标题
+			document.title = originalTitle;
+		}, 1000);  // 持续一秒后还原页面标题
 	}
 
 
