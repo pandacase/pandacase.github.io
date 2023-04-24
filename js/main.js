@@ -1,4 +1,5 @@
 (function () {
+	// 顶部导航栏
 	var header = document.getElementById("mainHeader");
 
 	function changeHeader() {
@@ -36,4 +37,22 @@
 			}, 500);
 		}
 	});
+
+
+	// 网页标题
+	var originalTitle = document.title; // 保存原来的页面标题
+	var timeoutId; // 定义一个定时器 ID
+	window.onblur = function() {
+		document.title = '欸!!?? (*ﾟﾛﾟ)!!'; // 更改页面标题为“未响应！”
+	}
+	window.onfocus = function() {
+		document.title = '没什么事啦(*σ´∀`)σ'; // 显示“骗你啦~”提示
+		clearTimeout(timeoutId); // 清除之前的定时器
+		timeoutId = setTimeout(function() {
+			document.title = originalTitle; // 更改回原来的页面标题
+		}, 1000); // 一秒钟后将页面标题更改回原来的标题
+	}
+
+
 })();
+//↑↑ 这对括号是对前面定义的匿名函数进行执行！
