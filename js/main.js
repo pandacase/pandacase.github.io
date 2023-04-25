@@ -55,13 +55,23 @@
 
 
 	// Contact 文本复制器
-	const copyText = document.getElementsById("copy-link").textContent; // 获取要复制的文本
+	const eletments = document.getElementsById("copy-link"); // 获取要复制的文本
+	const array = Array.from(eletments);
 
-	document.getElementsById("copy-link").addEventListener("click", () => {
-		navigator.clipboard.writeText(copyText); // 将文本复制到剪贴板
-		alert("已复制到剪贴板");
+	array.forEach(function(element){
+		const copyText = element.context;
+		element.addEventListener("click", () => {
+			navigator.clipboard.writeText(copyText); // 将文本复制到剪切板
+			if(Notification.permission === "granted"){
+				new Notification("Notice", {
+					body: "panda已经帮你放进剪贴板啦"
+				})
+			} else if (Notification.permission !== "denied") {
+				Notification
+			}
+		})
 	});
-
+	
 
 })();
 //↑↑ 这对括号是对前面定义的匿名函数进行执行！
