@@ -46,7 +46,7 @@
 		document.title = '欸！！？？ (*ﾟﾛﾟ)!!';
 	}
 	window.onfocus = function() {
-		document.title = '没什么事啦 (*σ´∀`)σ';
+		document.title = '嗨嗨嗨！ ヾ(^▽^*)))';
 		clearTimeout(timeoutId); // 清除定时器
 		timeoutId = setTimeout(function() {
 			document.title = originalTitle;
@@ -61,13 +61,21 @@
 	array.forEach(function(element){
 		const copyText = element.context;
 		element.addEventListener("click", () => {
-			navigator.clipboard.writeText(copyText); // 将文本复制到剪切板
+			// 将文本复制到剪切板
+			navigator.clipboard.writeText(copyText); 
+			// 提示信息
 			if(Notification.permission === "granted"){
 				new Notification("Notice", {
 					body: "panda已经帮你放进剪贴板啦"
 				})
 			} else if (Notification.permission !== "denied") {
-				Notification
+				Notification.requestPermission().then(function(permission){
+					if(permission === "granted"){
+						new Notification("Notice", {
+							body: "panda已经帮你放进剪贴板啦"
+						})
+					}
+				})
 			}
 		})
 	});
