@@ -54,5 +54,14 @@
 	}
 
 
+	// Contact 文本复制器
+	const copyText = document.getElementById("copy-link").textContent; // 获取要复制的文本
+
+	document.getElementById("copy-link").addEventListener("click", () => {
+		navigator.clipboard.writeText(copyText); // 将文本复制到剪贴板
+		alert("已复制到剪贴板");
+	});
+
+
 })();
 //↑↑ 这对括号是对前面定义的匿名函数进行执行！
