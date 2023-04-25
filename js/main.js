@@ -55,7 +55,7 @@
 
 
 	// Contact 文本复制器
-	const eletments = document.getElementsById("copy-link"); // 获取要复制的文本
+	const eletments = document.getElementsByClassName("copy-link"); // 获取要复制的文本
 	const array = Array.from(eletments);
 
 	array.forEach(function(element){
