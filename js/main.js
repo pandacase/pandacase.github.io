@@ -55,9 +55,9 @@
 
 
 	// Contact 文本复制器
-	const copyText = document.getElementById("copy-link").textContent; // 获取要复制的文本
+	const copyText = document.getElementsByClassName("copy-link").textContent; // 获取要复制的文本
 
-	document.getElementById("copy-link").addEventListener("click", () => {
+	document.getElementsByClassName("copy-link").addEventListener("click", () => {
 		navigator.clipboard.writeText(copyText); // 将文本复制到剪贴板
 		alert("已复制到剪贴板");
 	});
