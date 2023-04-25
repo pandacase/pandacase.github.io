@@ -47,10 +47,11 @@
 	}
 	window.onfocus = function() {
 		document.title = '嗨嗨嗨！ ヾ(^▽^*)))';
-		clearTimeout(timeoutId); // 清除定时器
+		clearTimeout(timeoutId);
+		// 持续一秒后还原页面标题
 		timeoutId = setTimeout(function() {
 			document.title = originalTitle;
-		}, 1000);  // 持续一秒后还原页面标题
+		}, 1000);  
 	}
 
 
