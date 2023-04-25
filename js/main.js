@@ -59,24 +59,12 @@
 	const array = Array.from(eletments);
 
 	array.forEach(function(element){
-		const copyText = element.context;
+		const copyText = element.textContent;
 		element.addEventListener("click", () => {
 			// 将文本复制到剪切板
 			navigator.clipboard.writeText(copyText); 
 			// 提示信息
-			if(Notification.permission === "granted"){
-				new Notification("Notice", {
-					body: "panda已经帮你放进剪贴板啦"
-				})
-			} else if (Notification.permission !== "denied") {
-				Notification.requestPermission().then(function(permission){
-					if(permission === "granted"){
-						new Notification("Notice", {
-							body: "panda已经帮你放进剪贴板啦"
-						})
-					}
-				})
-			}
+			alert("panda已经帮你放进剪切板啦");
 		})
 	});
 	
