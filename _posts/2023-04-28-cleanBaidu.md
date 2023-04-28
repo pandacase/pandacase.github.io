@@ -38,4 +38,73 @@ image: https://s1.ax1x.com/2023/03/12/ppM1bX4.jpg
 - author：脚本作者
 - match：指定这个脚本生效的网站。例如 " https://www.baidu.com/* " 表示所有以 " https://www.baidu.com/ " 开头的网页都会自动运行这个脚本。
 
-之后就是脚本具体的代码，放在 " // Your code here... " 之后。
+之后就是脚本具体的代码，放在 " // Your code here... " 之后。这里举一个简单的例子，你可以在把match的值设置为百度域名之后，在这个部分填入一句代码：
+
+```js
+    document.getElementById("su").value="( •̀ ω •́ )✧";
+```
+
+然后新打开一个百度搜索页面，点击油猴插件，勾选你刚刚常见的这个脚本。刷新网页后你就可以看到【百度一下】按钮变成了【( •̀ ω •́ )✧】，是不是很神奇呢！之后无论怎么刷新网页都是这样子的，因为油猴插件默认会在每次网页加载后运行一次被勾选的脚本。
+
+## # baiduClearner
+
+实现的逻辑非常的简单，无非就是对照着百度网页源码中各个html元素的id或者className，然后调用js去将html元素中的css值进行修改。下面列举主要几个板块
+
+比如对搜索结果链接的字体样式修改如下：
+
+```js
+    // a标签 文字样式
+    let aTags = document.getElementsByTagName("a");
+    for(let i = 0; i < aTags.length; i++){
+        aTags[i].style.textDecoration="none";
+        aTags[i].style.color="black";
+        aTags[i].addEventListener("mouseenter", function(){
+            this.style.textDecoration="underline";
+        })
+        aTags[i].addEventListener("mouseleave", function(){
+            this.style.textDecoration="none";
+        })
+    }
+```
+
+对搜索结果匹配出来的关键字样式修改如下：
+
+```js
+    // 关键字 颜色
+    let emTags = document.getElementsByTagName("em");
+    for(let i = 0; i < emTags.length; i++){
+        emTags[i].style.textDecoration="none";
+        emTags[i].style.color="#4e6ef2";
+    }
+    let fontTags = document.getElementsByTagName("font");
+    for(let i = 0; i < fontTags.length; i++){
+        fontTags[i].style.color="#4e6ef2";
+    }
+```
+
+页面元素清除（含广告）：
+
+```js
+    // 隐藏百度logo
+    let img = document.getElementsByClassName("index-logo-src");
+    img[0].style.visibility="hidden";
+
+    // 去除收藏/举报icon
+    removeElementsByClassName("icon_X09BS")
+
+    // 去除右侧热搜栏
+    removeElementById("con-ar")
+    removeElementById("con-right-bottom")
+    removeElementsByClassName("FYB_RD");
+    removeElementsByClassName("cr-content");
+    removeElementsByClassName("hint_right_middle");
+    removeElementsByClassName("_2z1q32z");
+
+    // 去除顶部右侧用户信息和foot
+    removeElementById("u");
+    removeElementById("foot");
+```
+
+最后再完善一下运行逻辑，比如在页面中再次点击百度搜索时对子页面进行刷新后，仍然会触发以上的净化代码。这一用户脚本就差不多完成了。
+
+## # 
