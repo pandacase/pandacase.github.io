@@ -1,5 +1,5 @@
 ---
-title: 油猴插件介绍and百度净化脚本
+title: 油猴插件介绍 & 百度净化脚本
 date: 2023-04-28
 description: 文末还有一些其他好用的浏览器插件推荐！
 categories: 
