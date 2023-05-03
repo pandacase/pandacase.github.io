@@ -37,6 +37,7 @@ image: https://s1.ax1x.com/2023/03/12/ppM1bX4.jpg
 - version：脚本版本号，由你自己控制
 - author：脚本作者
 - match：指定这个脚本生效的网站。例如 " https://www.baidu.com/* " 表示所有以 " https://www.baidu.com/ " 开头的网页都会自动运行这个脚本。
+- grant：用来声明这个脚本所需访问的油猴API权限（例如 GM_getValue、GM_setValue、GM_xmlhttpRequest）
 
 之后就是脚本具体的代码，放在 " // Your code here... " 之后。这里举一个简单的例子，你可以在把match的值设置为百度域名之后，在这个部分填入一句代码：
 
