@@ -4,7 +4,7 @@ date: 2023-04-28
 description: 文末还有一些其他好用的浏览器插件推荐！背景图是其中一个插件的演示
 categories: 
   - Javascript
-image: https://s1.ax1x.com/2023/05/04/p9tpyLT.png
+image: https://s1.ax1x.com/2023/03/12/ppM1bX4.jpg
 ---
 
 本人同时在用edge、chrome和firefox，三款浏览器分别用bing、google、baidu搜索引擎。三者对比之下就发现百度的搜索界面真的放满了广告，又杂又乱。实在忍受不下就写了这个简易的脚本对其进行净化。顺便介绍一下大名鼎鼎的油猴插件的使用。
@@ -139,6 +139,8 @@ image: https://s1.ax1x.com/2023/05/04/p9tpyLT.png
    这边推荐一款国产的插件：[五彩](https://www.dotalk.cn/product/wucai)。
    在网页上进行批注后，会一直保存在云端，下一次打开这个网页依然可以看到批注，也可以到个人账户中统一进行管理。而且给出的荧光笔笔色非常的好看（不知道你有没有用过斑马荧光笔，就是那种系列的色号！）
    个人使用下来的体验还是很不错的，推荐下载。
+   - 来个demo：
+   ![image](https://s1.ax1x.com/2023/05/04/p9tpyLT.png)
 
 -  各种各样的chatGPT/newBing插件：
    在进行搜索时，会有一个chat会话框放在右栏，自动把你的搜索关键词放进GPT或者newbing然后再返回聊天结果给你。
