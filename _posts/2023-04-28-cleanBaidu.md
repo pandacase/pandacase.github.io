@@ -1,10 +1,10 @@
 ---
 title: 油猴插件介绍 & 百度净化脚本
 date: 2023-04-28
-description: 文末还有一些其他好用的浏览器插件推荐！
+description: 文末还有一些其他好用的浏览器插件推荐！背景图是其中一个插件的演示
 categories: 
   - Javascript
-image: https://s1.ax1x.com/2023/03/12/ppM1bX4.jpg
+image: https://s1.ax1x.com/2023/05/04/p9tpyLT.png
 ---
 
 本人同时在用edge、chrome和firefox，三款浏览器分别用bing、google、baidu搜索引擎。三者对比之下就发现百度的搜索界面真的放满了广告，又杂又乱。实在忍受不下就写了这个简易的脚本对其进行净化。顺便介绍一下大名鼎鼎的油猴插件的使用。
