@@ -16,24 +16,54 @@
 		<link rel="stylesheet" href="{{ site.baseurl }}/css/screen.css">
 
 		<!-- 代码块和高亮渲染 -->
-		<link rel="stylesheet" href="editormd/css/editormd.preview.css" />
-		<div id="test-markdown-view">
-			<!-- Server-side output Markdown text -->
-			<textarea style="display:none;">### Hello world!</textarea>             
-		</div>
-		<script src="jquery.min.js"></script>
-		<script src="editormd/editormd.js"></script>
-		<script src="editormd/lib/marked.min.js"></script>
-		<script src="editormd/lib/prettify.min.js"></script>
-		<script type="text/javascript">
-			$(function() {
-				var testView = editormd.markdownToHTML("test-markdown-view", {
-					// markdown : "[TOC]\n### Hello world!\n## Heading 2", // Also, you can dynamic set Markdown text
-					// htmlDecode : true,  // Enable / disable HTML tag encode.
-					// htmlDecode : "style,script,iframe",  // Note: If enabled, you should filter some dangerous HTML tags for website security.
-				});
-			});
-		</script>    
+		<template>
+			<!-- 渲染生成的html代码 -->
+			<div class="article-content" v-html="info.articleContentHtml"></div>
+		</template>
+		  
+		<script>
+		// 引入默认样式
+		import 'highlight.js/scss/default.scss'
+		// 引入个性化的vs2015样式
+		import 'highlight.js/styles/vs2015.css'
+		</script>
+		  
+		<style lang="scss">
+		// 添加行号样式
+		pre.hljs {
+			padding: 8px 2px;
+			border-radius: 5px;
+			position: relative;
+			ol {
+			list-style: decimal;
+			margin: 0;
+			margin-left: 40px;
+			padding: 0;
+			li {
+				list-style: decimal-leading-zero;
+				position: relative;
+				padding-left: 10px;
+				.line-num {
+				position: absolute;
+				left: -40px;
+				top: 0;
+				width: 40px;
+				height: 100%;
+				border-right: 1px solid rgba(0, 0, 0, .66);
+				}
+			}
+			}
+			b.name {
+			position: absolute;
+			top: 2px;
+			right: 12px;
+			z-index: 10;
+			color: #999;
+			pointer-events: none;
+			}
+		}
+		</style>
+			
 		<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/prismjs@1.21.0/plugins/line-numbers/prism-line-numbers.min.css,npm/prismjs@1.21.0/plugins/toolbar/prism-toolbar.min.css,npm/prismjs@1.21.0/plugins/match-braces/prism-match-braces.min.css,npm/prism-themes@1.4.0/themes/prism-nord.min.css"/>
 		<script
 			src="https://cdn.jsdelivr.net/combine/npm/prismjs@1.21.0/components/prism-core.min.js,npm/prismjs@1.21.0/plugins/autoloader/prism-autoloader.min.js,npm/prismjs@1.21.0/plugins/line-numbers/prism-line-numbers.min.js,npm/prismjs@1.21.0/plugins/toolbar/prism-toolbar.min.js,npm/prismjs@1.21.0/plugins/match-braces/prism-match-braces.min.js"
