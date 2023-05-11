@@ -20,33 +20,32 @@
 			rel="stylesheet"
 			href="https://cdn.jsdelivr.net/combine/npm/[email protected]/plugins/line-numbers/prism-line-numbers.min.css,npm/[email protected]/plugins/toolbar/prism-toolbar.min.css,npm/[email protected]/plugins/match-braces/prism-match-braces.min.css,npm/[email protected]/themes/prism-nord.min.css"
 			/>
-			<script
-			src="https://cdn.jsdelivr.net/combine/npm/[email protected]/components/prism-core.min.js,npm/[email protected]/plugins/autoloader/prism-autoloader.min.js,npm/[email protected]/plugins/line-numbers/prism-line-numbers.min.js,npm/[email protected]/plugins/toolbar/prism-toolbar.min.js,npm/[email protected]/plugins/match-braces/prism-match-braces.min.js"
-			async="async"
-			data-autoloader-path="https://cdn.jsdelivr.net/npm/[email protected]/components/"
-			onload='
-				document.body.classList.add("line-numbers","match-braces");
-				Prism.plugins.toolbar.registerButton("select-code", function (env) {
-				let button = document.createElement("button");
-				button.textContent = "select this " + env.language;
-				button.addEventListener("click", function () {
-					if (document.body.createTextRange) {
-					let range = document.body.createTextRange();
-					range.moveToElementText(env.element);
-					range.select();
-					} else if (window.getSelection) {
-					let selection = window.getSelection();
-					let range = document.createRange();
-					range.selectNodeContents(env.element);
-					selection.removeAllRanges();
-					selection.addRange(range);
-					}
-				});
-				return button;
-				})'
-			></script>
+		<script
+		src="https://cdn.jsdelivr.net/combine/npm/[email protected]/components/prism-core.min.js,npm/[email protected]/plugins/autoloader/prism-autoloader.min.js,npm/[email protected]/plugins/line-numbers/prism-line-numbers.min.js,npm/[email protected]/plugins/toolbar/prism-toolbar.min.js,npm/[email protected]/plugins/match-braces/prism-match-braces.min.js"
+		async="async"
+		data-autoloader-path="https://cdn.jsdelivr.net/npm/[email protected]/components/"
+		onload='
+			document.body.classList.add("line-numbers","match-braces");
+			Prism.plugins.toolbar.registerButton("select-code", function (env) {
+			let button = document.createElement("button");
+			button.textContent = "select this " + env.language;
+			button.addEventListener("click", function () {
+				if (document.body.createTextRange) {
+				let range = document.body.createTextRange();
+				range.moveToElementText(env.element);
+				range.select();
+				} else if (window.getSelection) {
+				let selection = window.getSelection();
+				let range = document.createRange();
+				range.selectNodeContents(env.element);
+				selection.removeAllRanges();
+				selection.addRange(range);
+				}
+			});
+			return button;
+			})'
+		></script>
 
-		
 
 		<!-- 流程图渲染 -->
 		<style>
