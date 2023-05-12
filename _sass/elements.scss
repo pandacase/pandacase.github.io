@@ -69,39 +69,43 @@ ol > li {
 
 table {
 	padding: 0; 
-	width: 100%;
-  }
+	width: 80%;
+	margin: auto 0;
+}
   
-  table tr {
+table tr {
 	border-top: 1px solid #cccccc;
 	background-color: white;
 	margin: 0;
 	padding: 0; 
-  }
-  
-  table tr:nth-child(2n) {
+}
+
+
+table tr:nth-child(2n) {
 	background-color: #f8f8f8; 
-  }
-  
-  table tr th {
+}
+
+// 表头
+table tr th {
 	font-weight: bold;
 	border: 1px solid #cccccc;
-	text-align: left;
+	text-align: center;
 	margin: 0;
 	padding: 6px 13px; 
-  }
-  
-  table tr td {
+}
+
+// 表格数据
+table tr td { 
 	border: 1px solid #cccccc;
-	text-align: left;
+	text-align: center;
 	margin: 0;
 	padding: 6px 13px; 
-  }
-  
-  table tr th :first-child, table tr td :first-child {
+}
+
+table tr th :first-child, table tr td :first-child {
 	margin-top: 0; 
-  }
-  
-  table tr th :last-child, table tr td :last-child {
+}
+
+table tr th :last-child, table tr td :last-child {
 	margin-bottom: 0; 
-  }
+}
