@@ -1,9 +1,9 @@
 left_links:
-  - name: Blog
+  - name: 探索
     link: /blog/
-  - name: Daily
+  - name: 见闻
     link: /daily/
-  - name: Contact
+  - name: 留言
     link: /contact/
 right_links:
     - name: Github
