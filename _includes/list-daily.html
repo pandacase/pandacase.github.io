@@ -1,5 +1,4 @@
-{% assign posts = site.posts | where: "categories", "Daily"%}
-{% for post in posts %}
+{% for post in (site.posts | where: "categories", "Daily") %}
     <!-- {% if post.categories[0] == "Daily" %} -->
     <li class="blog-post">
         <h2><a href="{% include relative-src.html src=post.url %}">{{ post.title }}</a></h2>
