@@ -5,7 +5,7 @@
 		{% include post-title.html post=post %}
 		<div class="post-content">
 			{{ post.excerpt }}
-			<div class="button" style="float: right;"><a href="{% include relative-src.html src=post.url %}">查看文章</a></div>
+			<div class="button"><a href="{% include relative-src.html src=post.url %}">查看文章</a></div>
 		</div>
 	</li>
 	{% endif %}
