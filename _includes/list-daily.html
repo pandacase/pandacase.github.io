@@ -1,4 +1,4 @@
-{% for post in include.posts %}
+{% for post in site.posts %}
     {% if post.categories[0] == "Daily" %}
     <li class="blog-post">
         <h2><a href="{% include relative-src.html src=post.url %}">{{ post.title }}</a></h2>
