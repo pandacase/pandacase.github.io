@@ -1,16 +1,19 @@
 .github{
     padding: 50px 0;
     border-bottom: solid 5px gray;
-}
 
-.github .img-holder{
-    display: flex;
-    justify-content: center;
-}
+    h2{
+        font-size: 42px;
+    }
 
+    .img-holder{
+        display: flex;
+        justify-content: center;
 
-.github .img-holder img{
-    display: block;
-    max-width: 100%;
-    height: auto;
+        img{
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+    }
 }
