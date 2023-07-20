@@ -57,9 +57,9 @@ $(function() {
     });
   
     $(document).on('click', function(event) {
-      if (!$(event.target).closest('.search-box, .search-icon').length) {
-        $searchBox.hide();
-        $searchResults.hide();
-      }
+        if (!$(event.target).closest('.search-box, .search-icon').length) {
+            $searchBox.hide();
+            $searchResults.hide();
+        } 
     });
   });
