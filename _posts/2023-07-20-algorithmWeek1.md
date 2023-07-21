@@ -5,6 +5,7 @@ description: 解题思路记录
 categories: 
   - algorithm
   - java
+  - coursera
 image: 
 ---
 
