@@ -79,7 +79,7 @@ image: https://s1.ax1x.com/2023/03/27/ppsUlss.png
 
 回到家后开始查看学生名单，发现各年级是直接按成绩排序的，直接分班吧不是很妥。
 
-于是就心血来潮整了个随机分班小程序给2、4、5年级分班。
+于是就心血来潮整了个随机分班小程序给各年级分班。
 
 ```python
 def group_students(stuList, numOfGroups):
