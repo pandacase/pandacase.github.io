@@ -173,7 +173,7 @@ for group_num, group_students in result.items():
 
 也是在这个时候才发现，这个礼堂真的很有礼堂的样子。老旧的设备、发黄的风扇、绿色的高台、红色的超长落地窗帘。
 
-![](https://s1.ax1x.com/2023/08/03/pPimm7V.jpg)
+![](https://s1.ax1x.com/2023/08/03/pPFkYVO.jpg)
 
 学生们整齐地坐在礼堂中央，老师们站在礼堂的最后拍照。
 
@@ -284,3 +284,4 @@ for group_num, group_students in result.items():
 
 
 ## # 回家后的日子
+
