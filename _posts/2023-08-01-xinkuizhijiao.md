@@ -231,7 +231,7 @@ for group_num, group_students in result.items():
 
 ...
 
-![](https://s1.ax1x.com/2023/08/05/pPkcKc8.jpg)
+![](https://s1.ax1x.com/2023/08/05/pPkc0uF.jpg)
 
 
 
