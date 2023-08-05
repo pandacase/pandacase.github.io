@@ -229,7 +229,9 @@ for group_num, group_students in result.items():
 
 转头看向这个小男孩，眼神中露出了一点敬畏，而他的脸上笑嘻嘻。
 
+...
 
+![](https://s1.ax1x.com/2023/08/05/pPkcKc8.jpg)
 
 
 
