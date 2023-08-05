@@ -241,6 +241,8 @@ for group_num, group_students in result.items():
 
 ![](https://s1.ax1x.com/2023/08/05/pPkc0uF.jpg)
 
+(ps: 如果有读者想在笔记本屏幕上扫码，经过测试需要先放大图片)
+
 安安静静地弹，再自己安安静静地听。
 
 脑海里浮现出电影里的主人公坐在山顶看流星的场景。
