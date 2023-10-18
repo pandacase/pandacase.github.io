@@ -6,7 +6,7 @@ categories:
   - algorithm
   - java
   - coursera
-image: 
+image: https://i.ytimg.com/vi/0jNmHPfA_yE/maxresdefault.jpg
 ---
 
 一道关于 Union-Find 的编程作业，具体要求见 [Specification](https://coursera.cs.princeton.edu/algs4/assignments/percolation/specification.php)。
