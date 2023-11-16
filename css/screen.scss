@@ -1,5 +1,6 @@
 ---
 ---
+
 @import "mixins/columns";
 @import "mixins/flexbox";
 @import "variables";
@@ -14,3 +15,5 @@
 @import "footer";
 @import "cat";
 @import "github";
+@import "imports/module.scss"
+@import "imports/syntax.scss"
