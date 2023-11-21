@@ -17,17 +17,15 @@ image: /images/bgi/daily.jpg
 
 <section class="pad">
 	<div class="container">
-
-		<div class="addon">
-			<h2>Music Recently:</h2>
-			<div class="content-holder">
-				<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="430" height="86" src="//music.163.com/outchain/player?type=2&amp;id=2087759170&amp;auto=0&amp;height=66"></iframe>
-			</div>
-		</div>
-		
-
 		<!-- test -->
 		<div class="text-container">
+			<div class="addon">
+				<h2>Music Recently:</h2>
+				<div class="content-holder">
+					<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="480" height="96" src="//music.163.com/outchain/player?type=2&amp;id=2087759170&amp;auto=0&amp;height=66"></iframe>
+				</div>
+			</div>
+
 			<ul class="blog-posts">
 				{% for post in site.posts %}
 					{% if post.categories[0] == "Daily" %}
