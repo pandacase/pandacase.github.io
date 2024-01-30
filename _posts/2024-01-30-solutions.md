@@ -7,6 +7,8 @@ categories:
 image: 
 ---
 
+记录各种疑难杂症又不是很系统的问题的解决方法
+
 ## # 1. ZoneIdentifier feature disable
 
 Show up when files are copied from windows to wsl2.
