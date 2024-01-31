@@ -6,7 +6,7 @@ left_links:
   - name: 留言
     link: /contact/
   - name: PLAYGROUND
-    link: /fireworks/ 
+    link: /fireworks
 right_links:
     - name: Github
       link: https://github.com/pandacase
