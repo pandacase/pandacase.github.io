@@ -5,8 +5,8 @@ left_links:
     link: /daily/
   - name: 留言
     link: /contact/
-  - name: 友链
-    link: /friends/
+  - name: PLAYGROUND
+    link: /fireworks/ 
 right_links:
     - name: Github
       link: https://github.com/pandacase
