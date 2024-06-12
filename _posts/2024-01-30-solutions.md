@@ -48,7 +48,7 @@ For me, my linux machine is a virtual machine running on the *Oracle VM VirtualB
 
 The eth0 is used for ssh connection from host, and eth1 is used for access the internet. So the config in netplan yaml is:
 
-```
+```sh
 network:
   version: 2
   ethernets:
