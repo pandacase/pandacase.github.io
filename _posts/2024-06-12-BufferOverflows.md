@@ -182,7 +182,7 @@ env - setarch -R ./xxx
 
 该服务器上运行的一个名为 zoobar 的虚拟币交易 web application 在浏览器中访问的页面如下：
 
-![alt text](image-1.png)
+![alt text](https://s21.ax1x.com/2024/06/12/pkaecKP.png)
 
 ### 2.2 Finding buffer overflows
 
