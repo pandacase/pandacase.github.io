@@ -21,7 +21,7 @@ function draw() {
     nb_particles = random(500);
   }
 
-  background(0, 0, 0, 25);
+  // background(0, 0, 0, 25);
 
   if (random(1) < 0.05) {
     fireworks.push(new Firework());
