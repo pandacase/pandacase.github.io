@@ -58,3 +58,6 @@ network:
       dhcp4: true
 ```
 
+## # 4. The PDF is locked / not allowed to be copied.
+
+Open pdf in google chrome, hit print, choose printer as 'save as pdf'. This removes the restrictions on it. Open the pdf directly in word and it will keep most of the formatting intact.
