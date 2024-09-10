@@ -238,7 +238,19 @@ public:
 
 一个可以想到的方法是给内存池做分层。下层是一个大的公有内存池，而往上可以为每一个线程单独分配一个私有的内存池（私有内存池把内存块用完时向公有内存池申请更多的块）。这样，线程之间竞争 “申请/释放内存块处的锁” 的频率会大大降低。这个问题就可以得到有效的解决。
 
-接下来会介绍 intel 的一个方案：`tbb::scalable_allocator`。有不少使用者提到，当他们仅仅将程序代码中的 `std::vector<T>` 都替换成 `std::vector<T,tbb::scalable_allocator<T>>` 时，多线程程序的性能就可以得到成倍的提升。
+接下来会介绍 intel 的一个方案：`tbb::scalable_allocator`。有不少使用者提到，当他们仅仅将程序代码中的:
+
+```cpp
+std::vector<T>
+```
+
+都替换成:
+
+```cpp
+std::vector<T,tbb::scalable_allocator<T>>
+```
+
+时，多线程程序的性能就可以得到成倍的提升。
 
 `tbb::scalable_allocator`（以下简称 TBB）本质上也是一个分层的内存池，只不过具体的实现机制要复杂的多，相关的论文链接可以在本文结尾查看。
 
@@ -286,7 +298,7 @@ public:
 
 ## 5. References
 
-1. [https://medium.com/@threehappyer/memory-pool-techniques-in-c-79e01f6d2b19](https://medium.com/@threehappyer/memory-pool-techniques-in-c-79e01f6d2b19)
-2. [https://stackoverflow.com/questions/31358804/whats-the-advantage-of-using-stdallocator-instead-of-new-in-c](https://stackoverflow.com/questions/31358804/whats-the-advantage-of-using-stdallocator-instead-of-new-in-c)
-3. [https://stackoverflow.com/questions/826569/compelling-examples-of-custom-c-allocators](https://stackoverflow.com/questions/826569/compelling-examples-of-custom-c-allocators)
-4. [https://www.intel.com/content/dam/www/public/us/en/documents/research/2007-vol11-iss-4-intel-technology-journal.pdf](https://www.intel.com/content/dam/www/public/us/en/documents/research/2007-vol11-iss-4-intel-technology-journal.pdf) **at Page 59~61 (indexed in chrome)**
+1. [medium.com : memory pool](https://medium.com/@threehappyer/memory-pool-techniques-in-c-79e01f6d2b19)
+2. [stackoverflow.com : cpp allocator](https://stackoverflow.com/questions/31358804/whats-the-advantage-of-using-stdallocator-instead-of-new-in-c)
+3. [stackoverflow.com : allocator examples](https://stackoverflow.com/questions/826569/compelling-examples-of-custom-c-allocators)
+4. [intel technical pdf](https://www.intel.com/content/dam/www/public/us/en/documents/research/2007-vol11-iss-4-intel-technology-journal.pdf)  **(at Page 59~61 (indexed in chrome))**
