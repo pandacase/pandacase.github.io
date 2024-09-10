@@ -12,7 +12,33 @@ image:
 
 ## 1. Why mem pool needed.
 
-假设一个程序有频繁申请和释放内存的需求，这实际上是一比不小的开销。因为标准的 malloc / free 函数被调用后，需要发起系统调用，即向操作系统申请和释放内存。进出内核会有性能开销、内核内部的锁会产生等待开销、申请和释放这个操作本身会有开销。
+假设一个程序有频繁申请和释放内存的需求，这实际上是一比不小的开销。
+
+
+```sh
+# C++ memory "hierarchy"
+_________________
+|  Applications |
+|_______________|
+      |
+______↓_______________________
+|C++ library (std::allocator)|
+|____________________________|
+      |
+______↓______________________________________________________________________________
+|C++ primitives (new/delete, new[]/delete[], ::operator new()/::operator delete())  |
+|___________________________________________________________________________________|
+      |
+______↓________
+| malloc/free |
+|_____________|
+      |
+______↓______________
+| OS APIs, syscalls |
+|___________________|
+```
+
+因为标准的 malloc / free 函数被调用后，需要发起系统调用，即向操作系统申请和释放内存。进出内核会有性能开销、内核内部的锁会产生等待开销、申请和释放这个操作本身会有开销。
 
 而内存池其实本质上是把内存管理从内核中剥离出来，把管理逻辑移动到用户空间中去。
 
@@ -81,7 +107,70 @@ public:
 
 以上便是一个极其简单的实现了，在生产环境中还有许多不足，但作为一个 startup 的版本，用于初步理解内存池的工作原理还是有比较大的帮助。
 
-在用户程序中的简单使用实例：
+这里另外提供一个链表版本供参考：
+
+```cpp
+class MemoryPool {
+public:
+  ...
+private:
+  struct Block {
+    Block* next;
+  };
+
+  size_t _blockSize;
+  size_t _poolSize;
+  Block* _freeList;
+  void* _pool;
+};
+```
+
+值得注意的是，这里使用了另外一种连续内存申请的方式，提供另一种灵活内存分配的视角。具体来说，先分配整块内存给到 _pool，最后再把这块内存中每一段的初始地址作为一个链表结点的地址。
+
+```cpp
+  MemoryPool(size_t blockSize, size_t poolSize) 
+   : _blockSize(blockSize), _poolSize(poolSize) {
+    _pool = operator new(blockSize * poolSize); // 分配整块内存
+    _freeList = nullptr;
+
+    // 初始化空闲链表
+    for (size_t i = 0; i < poolSize; ++i) {
+      auto block = reinterpret_cast<Block*>(
+        static_cast<char*>(_pool) + i * blockSize
+      );
+      block->next = _freeList;
+      _freeList = block; // 将块添加到空闲链表中
+    }
+  }
+  
+  ~MemoryPool() {
+    operator delete(_pool); // 释放内存池
+  }
+```
+
+> reinterpret_cast<> 是一种无视风险的指针类型强制转换，一般在比较接近底层的编程中使用。实际上是比较偏向于 c 语言风格的指针类型转换。转换后的指针只会影响编译器看待这段内存的方式，不影响内存中实际存储的内容。
+
+```cpp
+  void* allocate() {
+    if (_freeList == nullptr) {
+      throw std::bad_alloc();
+    }
+
+    // 从空闲链表中获取第一个块
+    Block* block = _freeList;
+    _freeList = _freeList->next; // 更新空闲链表的头
+    return block;
+  }
+
+  void deallocate(void* ptr) {
+    // 将释放的块放回空闲链表
+    Block* block = reinterpret_cast<Block*>(ptr);
+    block->next = _freeList;
+    _freeList = block;
+  }
+```
+
+在用户程序中的简单使用实例（以数组版本为例）：
 
 ```cpp
 memory_pool pool1(BLOCK_SIZE, BLOCK_COUNT);
@@ -151,10 +240,39 @@ public:
 
 接下来会介绍 intel 的一个方案：`tbb::scalable_allocator`。有不少使用者提到，当他们仅仅将程序代码中的 `std::vector<T>` 都替换成 `std::vector<T,tbb::scalable_allocator<T>>` 时，多线程程序的性能就可以得到成倍的提升。
 
-`tbb::scalable_allocator` 本质上也是一个分层的内存池，只不过具体的实现机制要复杂的多，相关的论文链接可以在本文结尾查看。
+`tbb::scalable_allocator`（以下简称 TBB）本质上也是一个分层的内存池，只不过具体的实现机制要复杂的多，相关的论文链接可以在本文结尾查看。
 
 ![](https://s21.ax1x.com/2024/09/10/pAmNFG4.png)
 
+这里从上图的左侧总览图可以看到，当应用程序申请大的对象时，直接从操作系统的虚拟内存中申请。但是当申请小的对象时，则每个线程会从线程独享的 thread-private heap 进行申请；而每一个 thread-private heap 又会从 Global heap (/ abandoned blocks) 中获取新的 block，或者是释放一直没有使用到的 block；最后，global heap 才真正从操作系统的虚拟内存中申请堆内存。
+
+可以说，中间的两层结构就可以抽象作一个双层的内存池结构了。而上图的右侧则是 thread-private heap 与 global heap 的交互细节。
+
+具体来说，thread-private heap 中的许多 blocks 是以双向链表的形式组织的，并且整个链表只有一个 active block（位于链表中间），往后是 Full block，即被使用完的 block，往前是 Empty enough block（当 full block 中的使用率低于一个预设的阈值时被称为 Empty enough）。
+
+当某个 Full block 由于从 mailbox 中接收了足够数量的遣返块之后，如果降低到 Empty enough 的阈值，则移动到 Active Block 之前；从 Global heap 加入到这个双向链表的新的 block 也会插入在 Active Block 之前；最后，长时间待在链表头部的 unused blocks 会被重新释放到 Global heap 中。
+
+每个双向链表的 Active block 由一个 bin 的指针进行索引，而每个线程其实可以管理多个 bin（即一个 bins 数组），这同时也意味着每个线程可以具有多个双向链表。不同 bin 指向的双向链表中的 block 是不同粒度的内存划分（如分为 16 字节、32 字节、64 字节等）。
+
+这么设计是因为线程可能有多个内存分配请求，每个请求的对象大小不一，通过这种方式，TBB 的内存分配器可以避免内存碎片，同时保持高效的分配和释放操作。
+
+最后可以查看单个 block 中的结构图来进一步理解：
+
+![](https://s21.ax1x.com/2024/09/10/pAmNiiF.jpg)
+
+一个 block 中的 object 由于大小相同且对齐，使得每个 object 的 header 变得没有必要，这些信息只需要一个统一的 block header 就可以存储。这也就是说，释放一个对象所需的所有信息都可以通过 block header 轻松获得。
+
+另外，block 中的空闲块是由单链表来维护的（这点可以类比上一部分提供的链表实现示例，可以说结构上就是一样的）。不过这里值得注意的是，所有的空闲块实际上分成了 2 个单链表在维护，一个是 private free list，另一个是 public free list。
+
+其实这两个 free_list 都是用来接收调用了 deallocate 返还的内存（大小是一个 object），区别在于，private 接收的是当前这个 block 归属的线程返还的内存，而 public 接收的是其他线程返还的内存。
+
+这个时候你可能要问了，前面不是说 thread-private heap 是一个线程独享的吗，为什么这里还有其他线程参和进来？
+
+这实际上并不矛盾，线程只会从自己的 thread-private heap 中申请内存，但是释放内存的时候就不一定是释放到自己的 heap 中去了。这是因为在许多 消费者-生产者 分工明确的应用程序中，有一些生产者线程专门负责申请内存，然后交给消费者内存去执行实际的任务，而最后消费者执行完毕后释放内存时需要释放回到原来申请这块内存的 block 中去。
+
+而分成 private free list 和 public free list 显然也是为了不让其他线程的释放操作使得当前线程的申请/释放操作被线程锁限制了性能。（当前线程释放内存时会释放到 private free list中，申请内存也默认在这个列表申请，只有内存不足时才会考虑到 public free list 中获取）
+
+以上便是关于 TBB 中的 thread-private heap 的具体实现。
 
 
 ## 4. More than memory
