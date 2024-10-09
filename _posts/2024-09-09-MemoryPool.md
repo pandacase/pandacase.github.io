@@ -61,21 +61,21 @@ public:
 private:
   size_t _block_size;
   size_t _block_cnt;
-  std::vector<char*> _free_blocks;
+  std::vector<void*> _free_blocks;
   std::mutex _mutex;
 };
 ```
 
-私有成员采用一个 vector（vector 即使把对象创建在栈上，其实际的数据也存放在堆上，这里符合我们的预期），一个多线程锁用于避免多线程申请/释放内存块时导致的不一致状态（vector 并不是一个线程安全的对象，如果是链表的话当然也不是）。另外，内存块指针使用 `char*` 是一个常见的技巧，因为 char 的单位是 1 byte，所以使用 char* 指针可以进行最细粒度的内存控制。
+私有成员采用一个 vector（vector 即使把对象创建在栈上，其实际的数据也存放在堆上，这里符合我们的预期），一个多线程锁用于避免多线程申请/释放内存块时导致的不一致状态（vector 并不是一个线程安全的对象，如果是链表的话当然也不是）。
 
-在内存池的构造函数中，传入每个块的大小和块的数量进行初始化：(`operator new / detele` 与 `new / delete` 不同，他只会申请内存而不会调用对象类型的构造函数。)
+在内存池的构造函数中，传入每个块的大小和块的数量进行初始化：(`operator new / detele` 与 `new / delete` 不同，他只会申请内存而不会调用对象类型的构造函数，且返回的指针类型为 `void*`。)
 
 ```cpp
 public:
   memory_pool(size_t block_size, size_t block_cnt)
    : _block_size(block_size), _block_cnt(block_cnt) {
     for (size_t i = 0; i < _block_cnt; ++i) {
-      _free_blocks.push_back(static_cast<char*>(::operator new(_block_size)));
+      _free_blocks.push_back(operator new(_block_size));
     }
   }
 
@@ -101,11 +101,13 @@ public:
 
   void deallocate(void* block) {
     std::lock_guard<std::mutex> lock(_mutex);
-    _free_blocks.push_back(static_cast<char*>(block));
+    _free_blocks.push_back(block);
   }
 ```
 
 以上便是一个极其简单的实现了，在生产环境中还有许多不足，但作为一个 startup 的版本，用于初步理解内存池的工作原理还是有比较大的帮助。
+
+> 其实这个简单版本有一个小优化可以做，那就是把 `std::vector` 换成 `std::stack`，这样会有性能上的提升。因为 `std::vector` 在插入的过程中动态扩容会触发拷贝，但是 `std::stack` 依赖的是 `std::deque` 作为其实际实现，动态扩容的过程中不会对原数据块进行拷贝（这里具体请参考 deque 的实现原理）。
 
 这里另外提供一个**链表版本**供参考：
 
@@ -181,7 +183,9 @@ auto arr = new (block) std::array<int, 5>{1, 2, 3, 4, 5};
 
 当然，你可能很快就发现这里例子中隐含的问题。一是管理这单块内存也是一个比较麻烦的事情，要确保这个 block 指针不会用着用着越界（超过 BLOCK_SIZE）。以及，这里创建的是 array 对象，array 的一大特点是数组大小是固定的，所以数据和对象元数据可以存储在一起，但是如果是 vector、map 这类可变大小的容器，很显然实际数据和对象数据是分开存储的。所以如果我们在分配的内存块上构造一个新的 vector(or map)，那么只有对象元数据是真的放在我们的内存块上，其实际的数据内存还是被编译器分配到内存块之外的区域（仍然位于堆中）。
 
-前者可以通过引入新的机制来解决（比如在每个块的尾部放置内存哨兵），或者让程序员小心一点就可以了（站着说话不腰疼.jpg）。而后者就比较麻烦了，需要我们定义一个新的内存分配器来替换掉 std::vector 默认使用的 std::allocator。
+前者可以通过引入新的机制来解决（比如在每个块的尾部放置内存哨兵），或者让程序员小心一点就可以了（站着说话不腰疼.jpg）。又或者，业界常见的方式是使用多种不同块粒度的内存池一起管理（在申请内存块时尽可能提供大小合适的块，尽可能减少内部碎片）。
+
+而后者就比较麻烦了，需要我们定义一个新的内存分配器来替换掉 std::vector 默认使用的 std::allocator。
 
 实际上，std::vector 的模板参数是有两个的：
 
